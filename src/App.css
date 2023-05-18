@@ -1,4 +1,8 @@
-.App {
+#root {
+  background-color: antiquewhite;
+}
+
+.app {
   text-align: center;
 }
 
@@ -36,3 +40,8 @@
     transform: rotate(360deg);
   }
 }
+
+/* .grid1 {
+  display: grid;
+  grid-template-columns
+} */
