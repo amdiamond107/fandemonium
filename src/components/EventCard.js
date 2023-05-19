@@ -10,16 +10,15 @@ function EventCard({game}) {
   }
   
   return (
-    <li className="card">
-      <img src={game.image} alt={game.matchup} />
-      <h4>TBD</h4>
-      <p>TBD </p>
-      {like ? (
-        <button onClick={handleClick} className="primary">Like</button>
-      ) : (
-        <button onClick={handleClick}>Dislike</button>
-      )}
-    </li>
+      <li className="card">
+        <h1>{game.matchup}</h1> 
+        <p>{game.date}</p>
+        <img src={game.image} alt={game.matchup}/>
+        <p>{game.final_score}</p>
+        <header> High Scorers </header>
+        <p></p>
+        <span>{game.knicks_high_scorer} | {game.opponent_high_scorer}</span>
+      </li>
   );
 }
 

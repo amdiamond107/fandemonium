@@ -4,10 +4,8 @@ function Header() {
   return (
     <header>
       <h1>
-        Fandemonium
+      🏟 🏀 🏈 ⚾️ 🏒 Fandemonium ⛳️ 🏎 🏁 🎾 🏆
         <span className="logo" role="img">
-          <p> 🏟 🏀 🏈 ⚾️ 🏒 </p>
-          <p> ⛳️ 🏎 🏁 🎾 🏆 </p>
         </span>
       </h1>
     </header>

@@ -2,9 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 import React from "react";
 import Header from "./components/Header";
-import RecentEvents from "./components/RecentEvents";
-
+import EventList from "./components/EventList";
+import NewEventsForm from "./components/NewEventsForm";
+import Search from "./components/Search";
+import NavBar from "./components/NavBar"
 import { useState, useEffect } from "react";
+import {Route, Switch} from "react-router-dom"
 
 function App() {
 
@@ -17,13 +20,11 @@ function App() {
     .then(response => response.json())
     .then(gameData => setGames(gameData))
   }, [])
-
-  console.log(games)
   
   function addGames(event){
     event.preventDefault()
 
-    fetch('http://localhost:3000/events', {
+    fetch('http://localhost:4000/games', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,32 +33,41 @@ function App() {
       body: JSON.stringify(formData)
     })
     .then(response => response.json())
-    .then(newGame => setGames(...games, newGame))
+    .then(newGame => setGames([...games, newGame]))
   }
 
   function updateFormData(event) {
-    if(event.target.name === "likes" || event.target.name === "dislikes") {
-      setFormData({...formData, [event.target.name]: Number(event.target.value)})
-    } {
       setFormData({...formData, [event.target.name]: event.target.value})
     }
-  }
-
-  function updateSearchText(event){
-    setSearchText(event.target.value)
-  }
 
   const filteredGames = games.filter(game => {
     if(searchText === ""){
       return true
-    }
-    return game.name.toLowerCase().includes(searchText.toLowerCase())
-  })
-  
+    } {return game.matchup.toLowerCase().includes(searchText.toLowerCase()) || game.knicks_high_scorer.toLowerCase().includes(searchText.toLowerCase()) || game.opponent_high_scorer.toLowerCase().includes(searchText.toLowerCase()) || game.win_loss.toLowerCase().includes(searchText.toLowerCase()) || game.game_type.toLowerCase().includes(searchText.toLowerCase()) || game.date.toLowerCase().includes(searchText.toLowerCase())
+}})
+
   return (
     <div className="app">
       <Header />
-      <RecentEvents games={filteredGames} addGames={addGames} updateSearchText={updateSearchText} updateFormData={updateFormData} />
+      <p>A library of all the live sporting events you've attended...</p>
+      <NavBar />
+      <Switch>
+        
+        <Route path="/add_events">
+          <NewEventsForm updateFormData={updateFormData} addGames={addGames} />
+          <EventList games={filteredGames} />
+        </Route>
+
+        <Route path="/search_events">
+          <Search setSearchText={setSearchText} searchText={searchText} />
+          <EventList games={filteredGames} />
+        </Route>
+
+        <Route exact path="/">
+          <EventList games={games} />
+        </Route>
+      </Switch>
+
     </div>
   );
 }

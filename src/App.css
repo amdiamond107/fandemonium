@@ -1,9 +1,10 @@
 #root {
-  background-color: antiquewhite;
+  background-color: #006BB6;
 }
 
 .app {
   text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .App-logo {
@@ -19,7 +20,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 0vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,6 +33,30 @@
   color: #61dafb;
 }
 
+.card {
+  list-style-type: none
+}
+
+.nav {
+  cursor: pointer;
+  display: inline-flex;
+  list-style-type: none;
+  background-color: #F58426;
+  text-align: start;
+  vertical-align: middle;
+  white-space:nowrap ;
+}
+
+#search {
+  margin-right: 300px;
+  margin-left: 300px;
+}
+.searchbar {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -40,8 +65,3 @@
     transform: rotate(360deg);
   }
 }
-
-/* .grid1 {
-  display: grid;
-  grid-template-columns
-} */
