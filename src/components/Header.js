@@ -3,11 +3,9 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <h1>
-      🏟 🏀 🏈 ⚾️ 🏒 Fandemonium ⛳️ 🏎 🏁 🎾 🏆
-        <span className="logo" role="img">
-        </span>
-      </h1>
+      <div>
+      Welcome to Fandemonium - a library of recaps for all of the live sporting events you've attended...
+      </div>
     </header>
   );
 }

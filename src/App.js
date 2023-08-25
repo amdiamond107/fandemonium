@@ -1,4 +1,6 @@
 import logo from './logo.svg';
+import './normalize.css';
+import './bootstrap.min.css';
 import './App.css';
 import React from "react";
 import Header from "./components/Header";
@@ -6,6 +8,7 @@ import EventList from "./components/EventList";
 import NewEventsForm from "./components/NewEventsForm";
 import Search from "./components/Search";
 import NavBar from "./components/NavBar"
+import ContainerHeader from './components/ContainerHeader';
 import { useState, useEffect } from "react";
 import {Route, Switch} from "react-router-dom"
 
@@ -49,10 +52,9 @@ function App() {
   return (
     <div className="app">
       <Header />
-      <p>A library of all the live sporting events you've attended...</p>
       <NavBar />
+    <div className="container">
       <Switch>
-        
         <Route path="/add_events">
           <NewEventsForm updateFormData={updateFormData} addGames={addGames} />
           <EventList games={filteredGames} />
@@ -64,13 +66,22 @@ function App() {
         </Route>
 
         <Route exact path="/">
+          <ContainerHeader />
           <EventList games={games} />
         </Route>
       </Switch>
-
+    </div>
     </div>
   );
 }
 
 export default App;
 
+// <div class="card" style={{marginRight: 500, marginLeft: 500, marginBottom: 500, marginTop: 50}}>
+// <img src={game.image} class="card-img-top" alt={game.matchup}/>
+// <div class="card-body">
+//   <h5 class="card-title">{game.matchup}</h5>
+//   <p class="card-text">{game.date} </p>
+//   <a href={game.full_game_highlights} class="btn btn-primary">Full Game Highlights</a>
+// </div>
+// </div>

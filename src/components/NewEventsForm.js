@@ -1,7 +1,7 @@
 function NewEventsForm({addGames, updateFormData}) {
   return (
     <div className="new-event-form">
-      <h2>Add Events</h2>
+      <h3>Add More Recaps For Events Attended...</h3>
       <form onSubmit={addGames}>
         <input onChange={updateFormData} type="text" name="date" placeholder="Date 📆" required />
         <input onChange={updateFormData} type="text" name="matchup" placeholder="Matchup 🤜 🤛" required />
