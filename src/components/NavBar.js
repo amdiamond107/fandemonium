@@ -1,10 +1,11 @@
 import {NavLink} from "react-router-dom"
+import React from "react";
 
 function NavBar(){
     return(
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
             <div class="container-fluid">
-                <a className="navbar-brand" to="/">
+                <a className="navbar-brand" href="/">
                 🏟 Fandemonium 🎟
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

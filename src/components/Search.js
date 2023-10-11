@@ -1,3 +1,5 @@
+import React from "react";
+
 function Search({setSearchText, searchText}) {
   return (
     <div className="searchbar">

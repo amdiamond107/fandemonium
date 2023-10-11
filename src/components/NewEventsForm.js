@@ -1,3 +1,6 @@
+import React from "react";
+
+
 function NewEventsForm({addGames, updateFormData}) {
   return (
     <div className="new-event-form">
