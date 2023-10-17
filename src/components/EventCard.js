@@ -1,13 +1,13 @@
 import React from "react";
-import { useState } from "react"
+// import { useState } from "react"
 
 
 function EventCard({game}) {
-  const [like, setLike] = useState(true)
+  // const [like, setLike] = useState(true)
 
-  function handleClick(){
-    setLike(!like)
-  }
+  // function handleClick(){
+  //   setLike(!like)
+  // }
   
   return (
     <div class="col-md-6 col-xl-4">
@@ -38,18 +38,3 @@ function EventCard({game}) {
 
 export default EventCard;
 
-{/* <li className="card">
-        <h1>{game.matchup}</h1> 
-        <p></p>
-        <p>{game.game_type} Game (Knicks {game.win_loss})</p>
-        <img src={game.image} alt={game.matchup}/>
-        <p></p>
-        <header> Final Score </header>
-        <p>{game.final_score}</p>
-        <header> High Scorers </header>
-        <p></p>
-        <span>{game.knicks_high_scorer} | {game.opponent_high_scorer}</span>
-        <p>
-          <a href= {game.full_game_highlights}>Full Game Highlights</a>
-          </p>
-      </li> */}
